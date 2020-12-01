@@ -18,6 +18,28 @@ export const nRange = (start: number, ...nums: number[]): Array<Array<number>> =
   return _.flatMap(range(start), ((i: number) => nested.map((nest: Array<number>) => [i, ...nest])));
 };
 
+export const arrayPairs = <T>(arr: Array<T>) => {
+  let result: Array<[T, T]> = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      result.push([arr[i], arr[j]]);
+    }
+  }
+  return result;
+}
+
+export const arrayTriplets = <T>(arr: Array<T>) => {
+  let result: Array<[T, T, T]> = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j < arr.length; j++) {
+      for (let k = j; k < arr.length; k++) {
+        result.push([arr[i], arr[j], arr[k]]);
+      }
+    }
+  }
+  return result;
+}
+
 export const print = (col: string, ...args: unknown[]) => {
   const getNum = (color = col) => {
     switch(color) {
