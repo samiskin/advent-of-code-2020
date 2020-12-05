@@ -1,5 +1,3 @@
-import * as utils from './utils';
-
 const input = `
 8-9 n: nnnnnnnnn
 14-15 d: dzjgbdwdkdhdddh
@@ -1003,7 +1001,7 @@ const input = `
 4-15 b: fctbwzqnwbnvqbqlb
 `.trim().split('\n').map((s) => {
     const [ range, letter, pattern ] = s.split(' ');
-    return [ range.split('-').map((s) => parseInt(s, 10)), letter[0], pattern];
+    return [ range.split('-').map((s) => parseInt(s, 10)), letter[0], pattern] as const;
 });
 console.log(input)
 

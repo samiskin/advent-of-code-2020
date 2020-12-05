@@ -1,4 +1,4 @@
-import * as utils from './utils';
+import * as u from './utils';
 
 const input = `
 1228
@@ -203,10 +203,10 @@ const input = `
 1876
 `.trim().split('\n').map((s) => parseInt(s, 10));
 
-const pair = utils.arrayPairs(input).find(([a, b]) => a + b === 2020);
+const pair = u.arrayPairs(input).find(([a, b]) => a + b === 2020);
 console.log(pair);
 
-const triplet = utils.arrayTriplets(input).find(([a, b, c]) => a + b + c === 2020);
+const triplet = u.arrayComb(3, input).find(([a, b, c]) => a + b + c === 2020);
 console.log(triplet);
 
 console.log(pair[0] * pair[1]);
