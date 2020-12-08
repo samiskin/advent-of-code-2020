@@ -6,6 +6,9 @@ type FixedLengthArray<N extends number, T, _Counter extends any[] = []> =
     ? []
     : [T, ...FixedLengthArray<N, T, [null, ..._Counter]>];
 
+export const splitOnce = (str: string, splitter: string) =>
+  [ str.split(splitter)[0], str.slice(str.indexOf(splitter) + splitter.length) ]
+
 export const eq = (a: any, b: any) => a === b;
 export const neq = (a: any, b: any) => a !== b;
 export const gt = (a: any, b: any) => a > b;

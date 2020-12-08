@@ -869,7 +869,6 @@ const ids = input.map((chars) => {
   return row * 8 + col;
 });
 
-const min = Math.min(...ids);
 const max = Math.max(...ids);
 console.log(max);
 
